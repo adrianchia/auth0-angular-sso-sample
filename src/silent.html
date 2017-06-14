@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auth0 Silent Login</title>
+  <script src="https://cdn.auth0.com/js/auth0/8.7/auth0.min.js"></script>
+  <script type="text/javascript">
+    var clientId = "[YOUR CLIENT_ID]";
+    var domain = '[YOUR TENANT ID].auth0.com';
+    var webAuth = new auth0.WebAuth({
+      domain: domain,
+      clientID: clientId,
+      scope: 'openid profile',
+      responseType: 'token id_token',
+      redirectUri: 'http://localhost:4200/callback',
+      audience: '[YOUR API IDENTIFIER]'
+    });
+  </script>
+  <script type="text/javascript">
+    const parseHashOptions = {hash: window.location.hash};
+    const nonce = localStorage.getItem('nonce');
+    if (nonce) {
+      parseHashOptions['nonce'] = nonce;
+    }
+    webAuth.parseHash(parseHashOptions, function(err, response) {
+      parent.postMessage(err || response, 'http://localhost:4200/callback');
+    });
+  </script>
+</head>
+<body>
+
+</body>
+</html>

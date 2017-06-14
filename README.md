@@ -1,6 +1,14 @@
-# Hello
+# Auth0 SSO Example
+Based on [05-Token-Renewal sample](https://github.com/auth0-samples/auth0-angular-samples/tree/699b0864d4f5415770aedd1b54e89a153f174a35/05-Token-Renewal) 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+This project demostrate how to perform single sign on/out in Angular 4 application with Auth0. 
+
+The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+
+## Getting Started
+Please follow the **Getting Started** section in [05-Token-Renewal sample](https://github.com/auth0-samples/auth0-angular-samples/tree/699b0864d4f5415770aedd1b54e89a153f174a35/05-Token-Renewal) to setup API.
+
+Clone/download this repository and update configurations in **src/app/auth/auth.config.ts** as well as **src/silent.html**.
 
 ## Development server
 
